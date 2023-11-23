@@ -9,7 +9,7 @@ namespace BookShop.Models
         [Required]
         public string Name { get; set; }
         public string Description { get; set; }
-        public int DisplayOrer { get; set; }
+        public int DisplayOrder { get; set; }
 
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookShop.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20231123032836_AddItemToCategory")]
-    partial class AddItemToCategory
+    [Migration("20231123042912_CategoriesToTable")]
+    partial class CategoriesToTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,7 +36,7 @@ namespace BookShop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DisplayOrer")
+                    b.Property<int>("DisplayOrder")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -52,28 +52,28 @@ namespace BookShop.Migrations
                         {
                             Id = 1,
                             Description = "So scary",
-                            DisplayOrer = 2,
+                            DisplayOrder = 2,
                             Name = "Horror"
                         },
                         new
                         {
                             Id = 2,
                             Description = "So cool",
-                            DisplayOrer = 3,
+                            DisplayOrder = 3,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 3,
                             Description = "So romance",
-                            DisplayOrer = 1,
+                            DisplayOrder = 1,
                             Name = "Romance"
                         },
                         new
                         {
                             Id = 4,
                             Description = "So difficult",
-                            DisplayOrer = 4,
+                            DisplayOrder = 4,
                             Name = "Science"
                         });
                 });

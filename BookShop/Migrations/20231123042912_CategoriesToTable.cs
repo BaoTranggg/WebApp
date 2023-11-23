@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace BookShop.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCategoryToTable : Migration
+    public partial class CategoriesToTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,11 +20,22 @@ namespace BookShop.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DisplayOrer = table.Column<int>(type: "int", nullable: false)
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Description", "DisplayOrder", "Name" },
+                values: new object[,]
+                {
+                    { 1, "So scary", 2, "Horror" },
+                    { 2, "So cool", 3, "Action" },
+                    { 3, "So romance", 1, "Romance" },
+                    { 4, "So difficult", 4, "Science" }
                 });
         }
 
