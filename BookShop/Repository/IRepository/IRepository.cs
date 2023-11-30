@@ -9,6 +9,5 @@ namespace BookShop.Repository.IRepository
 		void Add(T entity);
 
 		void Delete(T entity);
-		void Save();
 	}
 }

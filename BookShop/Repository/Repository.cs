@@ -37,10 +37,5 @@ namespace BookShop.Repository
 			return query.ToList();
 		}
 
-		public void Save()
-		{
-			_dbContext.SaveChanges();
-		}
-
 	}
 }
