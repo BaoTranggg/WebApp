@@ -17,7 +17,7 @@ namespace BookShop.Repository
 		}
 		public void Save()
 		{
-			 _dbContext.SaveChanges();
+			_dbContext.SaveChanges();
 		}
 	}
 }

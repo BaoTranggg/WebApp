@@ -1,9 +1,10 @@
 ﻿using BookShop.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Data
 {
-    public class ApplicationDBContext:DbContext //tat ca viec lam lien quan den database
+    public class ApplicationDBContext : IdentityDbContext //tat ca viec lam lien quan den database
     {
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Book> Books { get; set; }
