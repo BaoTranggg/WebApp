@@ -8,6 +8,7 @@ namespace BookShop.Data
     {
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Book> Books { get; set; }
+		public DbSet<ApplicationUser> applicationUsers { get; set; }
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) 
         {
             
@@ -15,7 +16,8 @@ namespace BookShop.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().HasData(
+			base.OnModelCreating(modelBuilder);
+			modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Horror", Description = "So scary", DisplayOrder = 2 },
                 new Category { Id = 2, Name = "Action", Description = "So cool", DisplayOrder = 3 },
                 new Category { Id = 3, Name = "Romance", Description = "So romance", DisplayOrder = 1 },
